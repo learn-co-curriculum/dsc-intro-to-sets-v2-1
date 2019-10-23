@@ -207,3 +207,5 @@ To read more about sets in Python, you can find and read the documentation here:
 ## Summary
 
 In this section, you learned about sets, subsets, and universal sets. Next, you were introduced to some elementary set operations such as unions, intersections, and complements. After that, all this information was tied together through the inclusion-exclusion principle. Next, you saw how sets translate into Python. You'll start exploring set operations in Python in further detail in the next lab!
+
+If you're interested in diving a little bit deeper into sets to learn about notation, the difference between subsets and proper subsets, and the inclusion/exclusion principle, refer to the Appendix to this Module.
