@@ -3,7 +3,7 @@
 
 ## Introduction
 
-You have definitely heard of sets before. In this section, however, you will learn about the formal definition of sets, which will serve as a foundation for everything related to probability and combinatorics!
+You have definitely heard of sets before. In this section, however, you will learn the formal definition of sets, which will serve as a foundation for everything related to probability and combinatorics! You'll also learn about set operations and how to visualize set operations using Venn Diagrams. Finally, we'll introduce sets in Python. 
 
 ## Objectives
 
@@ -13,40 +13,38 @@ You will be able to:
 * Define a universal set and subsets
 * Describe the process of making unions, intersections, and complements
 * Use Venn Diagrams to visually demonstrate set operations
-* Describe the inclusion-exclusion principle
 
 
 ## What is a Set? 
 
 In probability theory, a set is defined as a *well-defined collection of objects*. 
 
-Mathematically, you can denote a set by $S$. If an element $x$ belongs to a set $S$, then you'd write $x \in S$. On the other hand, if $x$ does not belong to a set $S$, then you'd write $x\notin S$.
+Mathematically, you can denote a set by $S$. An element $x$ may or may not belong to a set $S$. 
 
-Example: If $S$ is defined as the set of even numbers, then:
+For example, if $S$ is defined as the set of even numbers, then:
 
-* If $x = 2$, $x\in S$ because $x$ is an even number.
+* If $x = 2$, $x$ belongs to $S$ because $x$ is an even number.
 
-* If $x = 9$, $x\notin S$ because $x$ is not an even number.
+* If $x = 9$, $x$ does not belong to $S$ because $x$ is not an even number.
 
 
 ## Subsets
 
-Set $T$ is a subset of set $S$ if *every element* in set $T$ is also in set $S$. The mathematical notation for a subset is $T \subseteq S$. 
+Set $T$ is a subset of set $S$ if *every element* in set $T$ is also in set $S$.
 
-Typically, you'll be more interested in *proper subsets*. All proper subsets are subsets. The only difference between subsets and proper subsets is that a subset can technically be the entire set. In other words, if A = {1,2,3} and B = {1,2,3} A is subset of B. If C = {1,2} then C is both a subset and proper subset of A. C is also a subset and proper subset of B. The mathematical notation for proper subsets is : $ C \subset A $
+For example, if A = {1,2,3} and B = {1,2,3}, A is subset of B. If C = {1,2} then C is a subset of A and a subset of B.
 
-**Example**: If S is the set of even numbers, set $T = \{2, 6, 22\}$ is a proper subset of $S$. Formally, you can write this as $T \subset S$. $T \subseteq S$ is also correct in this case!
+You can learn more about subsets and the related concept of proper subsets in the Appendix. 
+
 
 ## Universal Sets
 
 The collection of all possible outcomes in a certain context or universe is called the **universal set**.
 A universal set is often denoted by $\Omega$.
 
-Example of a universal set: All the possible outcomes when rolling a dice.
+An example of a universal set is the set of all possible outcomes when rolling a dice: $\Omega = \{1,2,3,4,5,6\}$
 
-$\Omega = \{1,2,3,4,5,6\}$
-
-Remember that a universal set is not necessarily all the possible things that have ever existed. Typically, a universal set is just all the possible elements within certain bounds, e.g., the set of all countries in the world, the set of all the animal species in the Bronx Zoo, etc.
+A universal set is not necessarily all the possible things that have ever existed. Typically, a universal set is just all the possible elements within certain bounds, e.g., the set of all countries in the world, the set of all the animal species in the Bronx Zoo, etc.
 
 A universal set can have an infinite number of elements, for example, the set of all real numbers!
 
@@ -108,40 +106,17 @@ The absolute complement of $S$ (so, $S'$ or $S^c$) is then given by $\{2,4,8,10,
 
 <img src="images/new_abs_comp.png" width="250"/>
 
-## Inclusion-Exclusion Principle
+## A quick note on the Inclusion-Exclusion Principle
 
 Note that if you want to know how many elements are in set $S$ versus $T$, you can't simply sum up the elements, because they have elements in common.
 
-In combinational mathematics, the inclusion-exclusion principle is a counting technique that solves this problem.
+In combinational mathematics, the inclusion-exclusion principle is a counting technique that solves this problem. To learn about the Inclusion-Exclusion Principle, refer to the Appendix for this Module.
 
-When having two sets, the method for counting the number of elements in the union of two finite sets is given by:
-
-$\mid S \cup T \mid = \mid S \mid + \mid T \mid - \mid S \cap T \mid $,
-
-where the horizontal lines denote the *cardinality* of a set, which is the number of elements in the set, considering a set with a finite number of elements. 
-
-The formula expresses the fact that the sum of the sizes of the two sets may be too large since some elements may be counted twice. For the double-counted elements, one is subtracted again.
-
-This formula can be extended to three sets, four sets, etc. For example, imagine you have a third set $R$. The number of elements in the union of three finite sets is given by:
-
-$\mid S \cup T\cup R \mid = \mid S \mid + \mid T \mid + \mid R \mid - \mid S \cap T \mid  -\mid S \cap R \mid - \mid R \cap T \mid  + \mid S \cap T \cap R \mid $
-
-
-<img src="images/new_venn_diagram.png" width="350"/>
 
 ## Empty Sets
 
 When there are no elements in a certain set, this set is **empty**, denoted by $\emptyset$ or simply $\{\}$
 
-## Sets in Python
-
-Some things to bear in mind when working with sets in Python:
-
-* Sets are unordered collections of unique elements.
-* Sets are iterable.
-* Sets are collections of lower level python objects (just like lists or dictionaries).
-
-Documentation for sets in Python can be found here: [Sets](https://docs.python.org/3.6/library/stdtypes.html#set-types-set-frozenset)
 
 ## Sets and Set Operations: A Summative Example
 
@@ -156,12 +131,79 @@ You could say that the **universal set** here, *set U*, contains all the restaur
 
 The **intersection** of *A* and *B* contains the restaurants that serve _both_ Italian food and burgers.
 
-The **relative complement** of *set A* contains the restaurants that serve burgers but _not_ Italian food.
+The **relative complement** of *set A* (relative to *set B*) contains the restaurants that serve burgers but _not_ Italian food.
 
 The **absolute complement** of *set A* contains the restaurants that serve *any food* but _no_ Italian food.
 
 
+## Introduction to Sets in Python
+
+Here are some things to bear in mind when working with sets in Python:
+
+* Sets are unordered collections of unique elements.
+* Sets are iterable.
+* Sets are collections of lower level python objects (just like lists or dictionaries).
+
+Let's use our example sets $S$ and $T$ to show how sets can be defined in Python. 
+
+Remember, $S$ is the set that includes the first four multiples of 3: 
+
+$ S = \{3,6,9,12\}$ 
+
+and $T$ is the set that includes the first four multiples of 2: 
+
+$ T = \{2,4,6,8\} $.
+
+To define sets in Python, we have the following two equivalent options: 
+
+
+```python
+# Define S = {3,6,9,12} and T = {2, 4, 6, 8}
+
+S = {3, 6, 9, 12}
+
+T = set([2, 4, 6, 8])
+
+print("Set S:", S)
+print("\nSet T:", T)
+```
+
+    Set S: {9, 3, 12, 6}
+    
+    Set T: {8, 2, 4, 6}
+
+
+You can check that both definitions of a set are equivalent: 
+
+
+```python
+{3, 6, 9, 12} == set({3, 6, 9, 12})
+```
+
+
+
+
+    True
+
+
+
+Notice that when printing the sets, the order of the elements was changed. Let's do a quick check to see if these are equivalent: 
+
+
+```python
+print({3, 6, 9, 12} == {9, 3, 12, 6})
+print({2, 4, 6, 8} == {8, 2, 4, 6})
+```
+
+    True
+    True
+
+
+Yes, they are! This is because, as mentioned before, sets are unordered collections of unique elements: as long as the elements in two defined sets are the same, the order in which we input them into Python does not matter in terms of determining if they are equivalent. 
+
+To read more about sets in Python, you can find and read the documentation here: [Sets](https://docs.python.org/3.6/library/stdtypes.html#set-types-set-frozenset). 
+
 
 ## Summary
 
-In this section, you learned about sets, subsets, and universal sets. Next, you were introduced to some elementary set operations such as unions, intersections, and complements. After that, all this information was tied together through the inclusion-exclusion principle. Next, you saw how sets translate into Python. You'll start exploring this in further detail in the next lab!
+In this section, you learned about sets, subsets, and universal sets. Next, you were introduced to some elementary set operations such as unions, intersections, and complements. After that, all this information was tied together through the inclusion-exclusion principle. Next, you saw how sets translate into Python. You'll start exploring set operations in Python in further detail in the next lab!
