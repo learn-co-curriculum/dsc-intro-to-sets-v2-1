@@ -13,6 +13,7 @@ You will be able to:
 * Define a universal set and subsets
 * Describe the process of making unions, intersections, and complements
 * Use Venn Diagrams to visually demonstrate set operations
+* Describe the inclusion/exclusion principle
 
 
 ## What is a Set? 
@@ -110,7 +111,17 @@ The absolute complement of $S$ (so, $S'$ or $S^c$) is then given by $\{2,4,8,10,
 
 Note that if you want to know how many elements are in set $S$ versus $T$, you can't simply sum up the elements, because they have elements in common.
 
-In combinational mathematics, the inclusion-exclusion principle is a counting technique that solves this problem. To learn about the Inclusion-Exclusion Principle, refer to the Appendix for this Module.
+In combinational mathematics, the inclusion-exclusion principle is a counting technique that solves this problem. 
+
+When having two sets, the method for counting the number of elements in the union of two finite sets is given by:
+
+$\mid S \cup T \mid = \mid S \mid + \mid T \mid - \mid S \cap T \mid $,
+
+where the horizontal lines denote the cardinality of a set, which is the number of elements in the set, considering a set with a finite number of elements.
+
+The formula expresses the fact that the sum of the sizes of the two sets may be too large since some elements may be counted twice. For the double-counted elements, one is subtracted again.
+
+To learn about the Inclusion-Exclusion Principle, refer to the Appendix for this Module.
 
 
 ## Empty Sets
